@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+  .container {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  button {
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #0056b3;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <form id="mobileForm">
+    <label for="mobileNumber">Enter Mobile Number:</label>
+    <input type="text" id="mobileNumber" name="mobileNumber" maxlength="10">
+    <button type="button" onclick="validateMobile()">Submit</button>
+  </form>
+</div>
+
+<script>
+function validateMobile() {
+  var mobileInput = document.getElementById("mobileNumber").value;
+  var pattern = /^[89]\d{9}$/;
+
+  if (pattern.test(mobileInput)) {
+    alert("Mobile number is valid!");
+  } else {
+    alert("Invalid mobile number. Please enter a 10-digit number starting with 8 or 9.");
+  }
+}
+</script>
+
+</body>
+</html>

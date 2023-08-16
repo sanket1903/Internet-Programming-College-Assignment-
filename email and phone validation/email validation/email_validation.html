@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div>
+      <h3 class="h3">Enter your email address</h3>
+      <form name="form1" action="#">
+        <input type="text" name="text1" />
+        <br />
+        <input
+          type="submit"
+          name="submit"
+          value="Submit"
+          onclick="validateEmail(document.form1.text1)"
+        />
+      </form>
+    </div>
+    <script>
+      function validateEmail(inputText) {
+      var data = inputText.value;
+      var atSign = data.indexOf("@");
+      var dotSign = data.indexOf(".");
+      if (atSign<1 || dotSign<atSign+2 || dotSign+2>=data.length) {
+        alert("Please add @ and .!");
+    return false;
+  }
+};
+</script>
+  </body>
+</html>
